@@ -3,18 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6695E3E426F75B5B004CF51B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E3E326F75B5B004CF51B /* AppDelegate.swift */; };
 		6695E3E626F75B5B004CF51B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E3E526F75B5B004CF51B /* SceneDelegate.swift */; };
-		6695E3E826F75B5B004CF51B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E3E726F75B5B004CF51B /* ViewController.swift */; };
 		6695E3EB26F75B5B004CF51B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6695E3E926F75B5B004CF51B /* Main.storyboard */; };
 		6695E3ED26F75B5E004CF51B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6695E3EC26F75B5E004CF51B /* Assets.xcassets */; };
-		6695E3F026F75B5E004CF51B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6695E3EE26F75B5E004CF51B /* LaunchScreen.storyboard */; };
 		6695E3FB26F75B5E004CF51B /* MarvelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E3FA26F75B5E004CF51B /* MarvelTests.swift */; };
 		6695E40626F75B5E004CF51B /* MarvelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E40526F75B5E004CF51B /* MarvelUITests.swift */; };
+		6695E41826F75E36004CF51B /* API in Frameworks */ = {isa = PBXBuildFile; productRef = 6695E41726F75E36004CF51B /* API */; };
+		6695E41E26F7603A004CF51B /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 6695E41D26F7603A004CF51B /* Extensions */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +38,8 @@
 		6695E3E026F75B5B004CF51B /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6695E3E326F75B5B004CF51B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6695E3E526F75B5B004CF51B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6695E3E726F75B5B004CF51B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6695E3EA26F75B5B004CF51B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6695E3EC26F75B5E004CF51B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6695E3EF26F75B5E004CF51B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6695E3F126F75B5E004CF51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6695E3F626F75B5E004CF51B /* MarvelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6695E3FA26F75B5E004CF51B /* MarvelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelTests.swift; sourceTree = "<group>"; };
@@ -49,6 +47,8 @@
 		6695E40126F75B5E004CF51B /* MarvelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6695E40526F75B5E004CF51B /* MarvelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelUITests.swift; sourceTree = "<group>"; };
 		6695E40726F75B5E004CF51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6695E41526F75E08004CF51B /* API */ = {isa = PBXFileReference; lastKnownFileType = folder; path = API; sourceTree = "<group>"; };
+		6695E41C26F76020004CF51B /* Extensions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Extensions; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6695E41E26F7603A004CF51B /* Extensions in Frameworks */,
+				6695E41826F75E36004CF51B /* API in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +81,13 @@
 		6695E3D726F75B5B004CF51B = {
 			isa = PBXGroup;
 			children = (
+				6695E41C26F76020004CF51B /* Extensions */,
+				6695E41526F75E08004CF51B /* API */,
 				6695E3E226F75B5B004CF51B /* Marvel */,
 				6695E3F926F75B5E004CF51B /* MarvelTests */,
 				6695E40426F75B5E004CF51B /* MarvelUITests */,
 				6695E3E126F75B5B004CF51B /* Products */,
+				6695E41626F75E36004CF51B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,12 +104,10 @@
 		6695E3E226F75B5B004CF51B /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
-				6695E3E326F75B5B004CF51B /* AppDelegate.swift */,
-				6695E3E526F75B5B004CF51B /* SceneDelegate.swift */,
-				6695E3E726F75B5B004CF51B /* ViewController.swift */,
+				6695E41326F75C88004CF51B /* Scenes */,
+				6695E41426F75C95004CF51B /* Helper */,
 				6695E3E926F75B5B004CF51B /* Main.storyboard */,
 				6695E3EC26F75B5E004CF51B /* Assets.xcassets */,
-				6695E3EE26F75B5E004CF51B /* LaunchScreen.storyboard */,
 				6695E3F126F75B5E004CF51B /* Info.plist */,
 			);
 			path = Marvel;
@@ -128,6 +131,29 @@
 			path = MarvelUITests;
 			sourceTree = "<group>";
 		};
+		6695E41326F75C88004CF51B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		6695E41426F75C95004CF51B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6695E3E326F75B5B004CF51B /* AppDelegate.swift */,
+				6695E3E526F75B5B004CF51B /* SceneDelegate.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		6695E41626F75E36004CF51B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +170,10 @@
 			dependencies = (
 			);
 			name = Marvel;
+			packageProductDependencies = (
+				6695E41726F75E36004CF51B /* API */,
+				6695E41D26F7603A004CF51B /* Extensions */,
+			);
 			productName = Marvel;
 			productReference = 6695E3E026F75B5B004CF51B /* Marvel.app */;
 			productType = "com.apple.product-type.application";
@@ -231,7 +261,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6695E3F026F75B5E004CF51B /* LaunchScreen.storyboard in Resources */,
 				6695E3ED26F75B5E004CF51B /* Assets.xcassets in Resources */,
 				6695E3EB26F75B5B004CF51B /* Main.storyboard in Resources */,
 			);
@@ -258,7 +287,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6695E3E826F75B5B004CF51B /* ViewController.swift in Sources */,
 				6695E3E426F75B5B004CF51B /* AppDelegate.swift in Sources */,
 				6695E3E626F75B5B004CF51B /* SceneDelegate.swift in Sources */,
 			);
@@ -302,14 +330,6 @@
 				6695E3EA26F75B5B004CF51B /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		6695E3EE26F75B5E004CF51B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6695E3EF26F75B5E004CF51B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -589,6 +609,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6695E41726F75E36004CF51B /* API */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = API;
+		};
+		6695E41D26F7603A004CF51B /* Extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Extensions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6695E3D826F75B5B004CF51B /* Project object */;
 }
