@@ -1,3 +1,3 @@
-public struct API {
-    public static var textt = "Hello, World!"
+struct API {
+    var text = "Hello, World!"
 }

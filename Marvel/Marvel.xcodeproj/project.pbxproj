@@ -13,8 +13,8 @@
 		6695E3ED26F75B5E004CF51B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6695E3EC26F75B5E004CF51B /* Assets.xcassets */; };
 		6695E3FB26F75B5E004CF51B /* MarvelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E3FA26F75B5E004CF51B /* MarvelTests.swift */; };
 		6695E40626F75B5E004CF51B /* MarvelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E40526F75B5E004CF51B /* MarvelUITests.swift */; };
-		6695E41826F75E36004CF51B /* API in Frameworks */ = {isa = PBXBuildFile; productRef = 6695E41726F75E36004CF51B /* API */; };
-		6695E41E26F7603A004CF51B /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 6695E41D26F7603A004CF51B /* Extensions */; };
+		66EF408126F7686E0075D141 /* API in Frameworks */ = {isa = PBXBuildFile; productRef = 66EF408026F7686E0075D141 /* API */; };
+		66EF408326F768730075D141 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 66EF408226F768730075D141 /* Extensions */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +47,8 @@
 		6695E40126F75B5E004CF51B /* MarvelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6695E40526F75B5E004CF51B /* MarvelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelUITests.swift; sourceTree = "<group>"; };
 		6695E40726F75B5E004CF51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6695E41526F75E08004CF51B /* API */ = {isa = PBXFileReference; lastKnownFileType = folder; path = API; sourceTree = "<group>"; };
-		6695E41C26F76020004CF51B /* Extensions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Extensions; sourceTree = "<group>"; };
+		66EF407E26F7684F0075D141 /* API */ = {isa = PBXFileReference; lastKnownFileType = folder; path = API; sourceTree = "<group>"; };
+		66EF407F26F768620075D141 /* Extensions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Extensions; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6695E41E26F7603A004CF51B /* Extensions in Frameworks */,
-				6695E41826F75E36004CF51B /* API in Frameworks */,
+				66EF408326F768730075D141 /* Extensions in Frameworks */,
+				66EF408126F7686E0075D141 /* API in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,8 +81,8 @@
 		6695E3D726F75B5B004CF51B = {
 			isa = PBXGroup;
 			children = (
-				6695E41C26F76020004CF51B /* Extensions */,
-				6695E41526F75E08004CF51B /* API */,
+				66EF407F26F768620075D141 /* Extensions */,
+				66EF407E26F7684F0075D141 /* API */,
 				6695E3E226F75B5B004CF51B /* Marvel */,
 				6695E3F926F75B5E004CF51B /* MarvelTests */,
 				6695E40426F75B5E004CF51B /* MarvelUITests */,
@@ -171,8 +171,8 @@
 			);
 			name = Marvel;
 			packageProductDependencies = (
-				6695E41726F75E36004CF51B /* API */,
-				6695E41D26F7603A004CF51B /* Extensions */,
+				66EF408026F7686E0075D141 /* API */,
+				66EF408226F768730075D141 /* Extensions */,
 			);
 			productName = Marvel;
 			productReference = 6695E3E026F75B5B004CF51B /* Marvel.app */;
@@ -611,11 +611,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6695E41726F75E36004CF51B /* API */ = {
+		66EF408026F7686E0075D141 /* API */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = API;
 		};
-		6695E41D26F7603A004CF51B /* Extensions */ = {
+		66EF408226F768730075D141 /* Extensions */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Extensions;
 		};
