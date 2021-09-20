@@ -5,6 +5,7 @@
 //  Created by Ali Hasanoğlu on 19.09.2021.
 //
 
+import Foundation
 import NetworkManager
 
 public protocol AppNetworkable: Networkable {}

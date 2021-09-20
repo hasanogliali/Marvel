@@ -1,0 +1,13 @@
+//
+//  Development.xcconfig
+//  Marvel
+//
+//  Created by Ali Hasanoğlu on 19.09.2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BASE_URL = https:\/\/gateway.marvel.com\/v1\/public\/
+PUBLIC_KEY = dcdb7d3e73a045010151761247e413d0
+HASH = 46cbd648eea447548790a13c599871f0
