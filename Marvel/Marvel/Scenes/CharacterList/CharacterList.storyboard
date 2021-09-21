@@ -4,8 +4,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,10 +18,60 @@
                     <view key="view" contentMode="scaleToFill" id="chM-je-gA4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XAO-sN-Bi3">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6f2-tX-z5y">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LqB-VR-rrh">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ksw-7L-qMg">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="nxe-uw-h5I" id="xQh-HG-Nyi"/>
+                                    <outlet property="delegate" destination="nxe-uw-h5I" id="VEX-bQ-xnI"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="acR-sl-ate"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="acR-sl-ate" firstAttribute="bottom" secondItem="XAO-sN-Bi3" secondAttribute="bottom" id="0ZR-bY-RXU"/>
+                            <constraint firstItem="XAO-sN-Bi3" firstAttribute="leading" secondItem="acR-sl-ate" secondAttribute="leading" id="8J1-Ub-i9P"/>
+                            <constraint firstItem="acR-sl-ate" firstAttribute="trailing" secondItem="XAO-sN-Bi3" secondAttribute="trailing" id="C5C-MQ-X3Z"/>
+                            <constraint firstItem="XAO-sN-Bi3" firstAttribute="top" secondItem="acR-sl-ate" secondAttribute="top" id="uNf-S5-4gN"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="F0c-pV-gDO"/>
+                    <navigationItem key="navigationItem" id="F0c-pV-gDO">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" id="H5V-fK-fDp">
+                                <imageReference key="image" image="list.bullet" catalog="system" symbolScale="large" renderingMode="original"/>
+                                <connections>
+                                    <action selector="verticalList:" destination="nxe-uw-h5I" id="KnO-jO-GHz"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" id="y3K-HM-ay5">
+                                <imageReference key="image" image="rectangle.grid.2x2" catalog="system" renderingMode="original"/>
+                                <connections>
+                                    <action selector="gridList:" destination="nxe-uw-h5I" id="J8Z-fb-u4H"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="XAO-sN-Bi3" id="mXh-Ha-sCY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZo-gs-e4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -28,10 +80,10 @@
         <!--Navigation Controller-->
         <scene sceneID="z38-CL-LtL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="jAY-pe-Hx4" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jAY-pe-Hx4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UKr-If-cfR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -45,6 +97,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="rectangle.grid.2x2" catalog="system" width="128" height="99"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

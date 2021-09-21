@@ -5,23 +5,35 @@
 //  Created by Ali Hasanoğlu on 19.09.2021.
 //
 
-import Foundation
+import API
 
 // swiftlint:disable nesting
 enum CharacterList {
     
-    enum Case {
+    enum FetchCharacters {
         
         struct Request {
             
         }
         
         struct Response {
-            
+            let characters: [CharacterItem]
         }
         
         struct ViewModel {
+            let characters: [CharacterCellModel]
+            var listType: ListType = .vertical
             
+            enum ListType {
+                case vertical
+                case grid
+            }
+            
+            struct CharacterCellModel {
+                let image: String
+                let name: String
+                let seriesCount: String
+            }
         }
         
     }

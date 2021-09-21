@@ -8,11 +8,24 @@
 import Foundation
 
 protocol CharacterListPresentationLogic: AnyObject {
-    
+    func presentCharacters(response: CharacterList.FetchCharacters.Response)
 }
 
 final class CharacterListPresenter: CharacterListPresentationLogic {
     
     weak var viewController: CharacterListDisplayLogic?
     
+    func presentCharacters(response: CharacterList.FetchCharacters.Response) {
+        var characterList = [CharacterList.FetchCharacters.ViewModel.CharacterCellModel]()
+        response.characters.forEach {
+            characterList.append(
+                .init(
+                    image: "\($0.thumbnail?.path ?? "").\($0.thumbnail?.thumbnailExtension ?? "")",
+                    name: $0.name ?? "",
+                    seriesCount: "Played in \($0.series?.items?.count ?? 0) series"
+                )
+            )
+        }
+        viewController?.displayCharacters(viewModel: .init(characters: characterList))
+    }
 }

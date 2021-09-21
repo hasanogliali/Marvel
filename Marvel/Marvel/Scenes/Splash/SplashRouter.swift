@@ -27,7 +27,7 @@ final class SplashRouter: SplashRoutingLogic, SplashDataPassing {
             ) as! CharacterListViewController
         let navContr = UINavigationController(rootViewController: characterList)
         navContr.modalPresentationStyle = .fullScreen
-        characterList.router?.dataStore?.characters = dataStore?.characters
+        characterList.router?.dataStore?.characters = dataStore?.characters?.data?.results ?? []
         self.viewController?.present(navContr, animated: true)
     }
 }

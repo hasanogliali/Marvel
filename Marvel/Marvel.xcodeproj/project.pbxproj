@@ -21,12 +21,17 @@
 		664E7A0026F8E6FA00C475D8 /* SplashModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E79F926F8E6FA00C475D8 /* SplashModels.swift */; };
 		664E7A0126F8E6FA00C475D8 /* SplashWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E79FA26F8E6FA00C475D8 /* SplashWorker.swift */; };
 		664E7A0226F8E6FA00C475D8 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E79FB26F8E6FA00C475D8 /* SplashRouter.swift */; };
+		664E7A0626F8F38A00C475D8 /* VerticalCharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E7A0426F8F38A00C475D8 /* VerticalCharacterCell.swift */; };
+		664E7A0726F8F38A00C475D8 /* VerticalCharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 664E7A0526F8F38A00C475D8 /* VerticalCharacterCell.xib */; };
+		664E7A1B26FA56D100C475D8 /* GridCharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E7A1926FA56D100C475D8 /* GridCharacterCell.swift */; };
+		664E7A1C26FA56D100C475D8 /* GridCharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 664E7A1A26FA56D100C475D8 /* GridCharacterCell.xib */; };
 		6695E3E426F75B5B004CF51B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E3E326F75B5B004CF51B /* AppDelegate.swift */; };
 		6695E3E626F75B5B004CF51B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E3E526F75B5B004CF51B /* SceneDelegate.swift */; };
 		6695E3EB26F75B5B004CF51B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6695E3E926F75B5B004CF51B /* Main.storyboard */; };
 		6695E3ED26F75B5E004CF51B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6695E3EC26F75B5E004CF51B /* Assets.xcassets */; };
 		6695E3FB26F75B5E004CF51B /* MarvelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E3FA26F75B5E004CF51B /* MarvelTests.swift */; };
 		6695E40626F75B5E004CF51B /* MarvelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695E40526F75B5E004CF51B /* MarvelUITests.swift */; };
+		6699DDCB26FA6859009C3A93 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 6699DDCA26FA6859009C3A93 /* SDWebImage */; };
 		66EF408126F7686E0075D141 /* API in Frameworks */ = {isa = PBXBuildFile; productRef = 66EF408026F7686E0075D141 /* API */; };
 		66EF408326F768730075D141 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 66EF408226F768730075D141 /* Extensions */; };
 /* End PBXBuildFile section */
@@ -64,6 +69,10 @@
 		664E79F926F8E6FA00C475D8 /* SplashModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModels.swift; sourceTree = "<group>"; };
 		664E79FA26F8E6FA00C475D8 /* SplashWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWorker.swift; sourceTree = "<group>"; };
 		664E79FB26F8E6FA00C475D8 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		664E7A0426F8F38A00C475D8 /* VerticalCharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCharacterCell.swift; sourceTree = "<group>"; };
+		664E7A0526F8F38A00C475D8 /* VerticalCharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerticalCharacterCell.xib; sourceTree = "<group>"; };
+		664E7A1926FA56D100C475D8 /* GridCharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCharacterCell.swift; sourceTree = "<group>"; };
+		664E7A1A26FA56D100C475D8 /* GridCharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridCharacterCell.xib; sourceTree = "<group>"; };
 		6695E3E026F75B5B004CF51B /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6695E3E326F75B5B004CF51B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6695E3E526F75B5B004CF51B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6699DDCB26FA6859009C3A93 /* SDWebImage in Frameworks */,
 				66EF408326F768730075D141 /* Extensions in Frameworks */,
 				66EF408126F7686E0075D141 /* API in Frameworks */,
 			);
@@ -118,6 +128,7 @@
 		664E79E526F7881700C475D8 /* CharacterList */ = {
 			isa = PBXGroup;
 			children = (
+				664E7A0326F8F35800C475D8 /* Views */,
 				664E79E726F7882D00C475D8 /* CharacterListViewController.swift */,
 				664E79E926F7882D00C475D8 /* CharacterListInteractor.swift */,
 				664E79E826F7882D00C475D8 /* CharacterListPresenter.swift */,
@@ -141,6 +152,17 @@
 				664E79F526F8E6FA00C475D8 /* Splash.storyboard */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		664E7A0326F8F35800C475D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				664E7A0426F8F38A00C475D8 /* VerticalCharacterCell.swift */,
+				664E7A0526F8F38A00C475D8 /* VerticalCharacterCell.xib */,
+				664E7A1926FA56D100C475D8 /* GridCharacterCell.swift */,
+				664E7A1A26FA56D100C475D8 /* GridCharacterCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		6695E3D726F75B5B004CF51B = {
@@ -241,6 +263,7 @@
 			packageProductDependencies = (
 				66EF408026F7686E0075D141 /* API */,
 				66EF408226F768730075D141 /* Extensions */,
+				6699DDCA26FA6859009C3A93 /* SDWebImage */,
 			);
 			productName = Marvel;
 			productReference = 6695E3E026F75B5B004CF51B /* Marvel.app */;
@@ -313,6 +336,9 @@
 				Base,
 			);
 			mainGroup = 6695E3D726F75B5B004CF51B;
+			packageReferences = (
+				6699DDC926FA6859009C3A93 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 6695E3E126F75B5B004CF51B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -331,8 +357,10 @@
 			files = (
 				6695E3ED26F75B5E004CF51B /* Assets.xcassets in Resources */,
 				664E79ED26F7882D00C475D8 /* CharacterList.storyboard in Resources */,
+				664E7A0726F8F38A00C475D8 /* VerticalCharacterCell.xib in Resources */,
 				6695E3EB26F75B5B004CF51B /* Main.storyboard in Resources */,
 				664E79FC26F8E6FA00C475D8 /* Splash.storyboard in Resources */,
+				664E7A1C26FA56D100C475D8 /* GridCharacterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,10 +390,12 @@
 				664E79FE26F8E6FA00C475D8 /* SplashPresenter.swift in Sources */,
 				664E7A0126F8E6FA00C475D8 /* SplashWorker.swift in Sources */,
 				664E79F026F7882D00C475D8 /* CharacterListInteractor.swift in Sources */,
+				664E7A1B26FA56D100C475D8 /* GridCharacterCell.swift in Sources */,
 				664E79EF26F7882D00C475D8 /* CharacterListPresenter.swift in Sources */,
 				664E79FD26F8E6FA00C475D8 /* SplashViewController.swift in Sources */,
 				664E79FF26F8E6FA00C475D8 /* SplashInteractor.swift in Sources */,
 				6695E3E426F75B5B004CF51B /* AppDelegate.swift in Sources */,
+				664E7A0626F8F38A00C475D8 /* VerticalCharacterCell.swift in Sources */,
 				664E7A0226F8E6FA00C475D8 /* SplashRouter.swift in Sources */,
 				664E79F126F7882D00C475D8 /* CharacterListModels.swift in Sources */,
 				664E79EE26F7882D00C475D8 /* CharacterListViewController.swift in Sources */,
@@ -693,7 +723,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		6699DDC926FA6859009C3A93 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		6699DDCA26FA6859009C3A93 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6699DDC926FA6859009C3A93 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		66EF408026F7686E0075D141 /* API */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = API;

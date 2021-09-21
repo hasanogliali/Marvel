@@ -13,20 +13,20 @@ protocol CharacterListBusinessLogic: AnyObject {
 }
 
 protocol CharacterListDataStore: AnyObject {
-    var characters: CharacterResponse? { get set }
+    var characters: [CharacterItem] { get set }
 }
 
 final class CharacterListInteractor: CharacterListBusinessLogic, CharacterListDataStore {
     
     var presenter: CharacterListPresentationLogic?
     var worker: CharacterListWorkingLogic?
-    var characters: CharacterResponse?
+    var characters: [CharacterItem] = []
     
     init(worker: CharacterListWorkingLogic) {
         self.worker = worker
     }
     
     func fetchCharacters() {
-        print(characters)
+        self.presenter?.presentCharacters(response: .init(characters: characters))
     }
 }
