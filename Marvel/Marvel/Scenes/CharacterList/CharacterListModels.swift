@@ -38,5 +38,10 @@ enum CharacterList {
         
     }
     
+    enum FetchSearch {
+        struct Request {
+            let searchText: String
+        }
+    }
 }
 // swiftlint:enable nesting

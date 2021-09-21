@@ -17,6 +17,7 @@ final class CharacterListViewController: UIViewController {
     var router: (CharacterListRoutingLogic & CharacterListDataPassing)?
     @IBOutlet weak var collectionView: UICollectionView!
     var viewModel: CharacterList.FetchCharacters.ViewModel?
+    @IBOutlet weak var searchBar: UISearchBar!
     
     // MARK: Object lifecycle
     
@@ -114,7 +115,12 @@ extension CharacterListViewController: UICollectionViewDelegate, UICollectionVie
         layout collectionViewLayout: UICollectionViewLayout,
         minimumLineSpacingForSectionAt section: Int
     ) -> CGFloat {
-        32
+        switch self.viewModel?.listType {
+        case .grid:
+            return 32
+        default:
+            return 0
+        }
     }
 
     func collectionView(
@@ -141,3 +147,8 @@ extension CharacterListViewController: UICollectionViewDelegate, UICollectionVie
     }
 }
 
+extension CharacterListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        interactor?.fetchSearch(request: .init(searchText: searchText))
+    }
+}
