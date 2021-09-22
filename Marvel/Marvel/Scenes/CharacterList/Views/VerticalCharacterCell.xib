@@ -44,15 +44,14 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFC-17-DKA">
-                                                <rect key="frame" x="114" y="0.0" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="4eO-Lz-sO7"/>
-                                                    <constraint firstAttribute="height" constant="30" id="4tE-DW-NiA"/>
-                                                </constraints>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NQu-9K-Jtc">
+                                                <rect key="frame" x="114" y="-0.5" width="30" height="30"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="star" catalog="system"/>
-                                            </button>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="pZt-Od-Xek"/>
+                                                    <constraint firstAttribute="height" constant="30" id="vqf-Jk-6dW"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -87,8 +86,8 @@
                 <constraint firstAttribute="trailing" secondItem="1Uf-4D-EJi" secondAttribute="trailing" constant="16" id="xND-g0-wZr"/>
             </constraints>
             <connections>
-                <outlet property="btnFavorite" destination="dFC-17-DKA" id="ts6-dQ-yha"/>
                 <outlet property="ivCharacter" destination="tcV-UN-0OZ" id="sfD-iF-nTO"/>
+                <outlet property="ivFavorite" destination="NQu-9K-Jtc" id="dEc-QI-pUc"/>
                 <outlet property="labelName" destination="ruq-D6-kg5" id="cet-26-4Nd"/>
                 <outlet property="labelSeriesCount" destination="5UU-Yq-le1" id="bsd-Vn-URp"/>
             </connections>

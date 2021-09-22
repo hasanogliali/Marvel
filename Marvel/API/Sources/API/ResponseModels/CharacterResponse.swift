@@ -10,9 +10,9 @@ import Foundation
 public struct CharacterResponse: Decodable {
     
     public struct Request: Encodable {
-        public let offset: Int
+        public let offset: String
         
-        public init(offset: Int) {
+        public init(offset: String) {
             self.offset = offset
         }
     }

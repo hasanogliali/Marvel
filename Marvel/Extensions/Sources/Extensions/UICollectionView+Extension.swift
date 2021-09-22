@@ -24,4 +24,16 @@ public extension UICollectionView {
         }
         return cell
     }
+    
+    func addFooter() {
+        self.register(
+            CollectionViewFooter.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: "Footer"
+        )
+        (self.collectionViewLayout as? UICollectionViewFlowLayout)?.footerReferenceSize = CGSize(
+            width: self.bounds.width,
+            height: 50
+        )
+    }
 }

@@ -9,6 +9,7 @@ import Foundation
 
 protocol CharacterListPresentationLogic: AnyObject {
     func presentCharacters(response: CharacterList.FetchCharacters.Response)
+    func presentError(_ message: String)
 }
 
 final class CharacterListPresenter: CharacterListPresentationLogic {
@@ -27,5 +28,9 @@ final class CharacterListPresenter: CharacterListPresentationLogic {
             )
         }
         viewController?.displayCharacters(viewModel: .init(characters: characterList))
+    }
+    
+    func presentError(_ message: String) {
+        viewController?.displayError(message)
     }
 }

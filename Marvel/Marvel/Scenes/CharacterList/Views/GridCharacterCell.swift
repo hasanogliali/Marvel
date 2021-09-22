@@ -12,7 +12,7 @@ class GridCharacterCell: UICollectionViewCell {
     @IBOutlet weak var ivCharacter: UIImageView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelSeriesCount: UILabel!
-    @IBOutlet weak var btnFavorite: UIButton!
+    @IBOutlet weak var ivFavorite: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

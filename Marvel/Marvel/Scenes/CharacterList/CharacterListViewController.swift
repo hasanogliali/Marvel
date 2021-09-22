@@ -6,18 +6,24 @@
 //
 
 import UIKit
+import Extensions
 
 protocol CharacterListDisplayLogic: AnyObject {
     func displayCharacters(viewModel: CharacterList.FetchCharacters.ViewModel)
+    func displayError(_ message: String)
 }
 
 final class CharacterListViewController: UIViewController {
     
     var interactor: CharacterListBusinessLogic?
     var router: (CharacterListRoutingLogic & CharacterListDataPassing)?
+    
     @IBOutlet weak var collectionView: UICollectionView!
-    var viewModel: CharacterList.FetchCharacters.ViewModel?
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    private let footerView = UIActivityIndicatorView(style: .large)
+    var viewModel: CharacterList.FetchCharacters.ViewModel?
+    var listType: CharacterList.ListType = .vertical
     
     // MARK: Object lifecycle
     
@@ -51,6 +57,7 @@ final class CharacterListViewController: UIViewController {
         interactor?.fetchCharacters()
         collectionView.registerNib(VerticalCharacterCell.self, bundle: .main)
         collectionView.registerNib(GridCharacterCell.self, bundle: .main)
+        collectionView.addFooter()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,30 +66,44 @@ final class CharacterListViewController: UIViewController {
     }
     
     @IBAction func verticalList(_ sender: Any) {
-        self.viewModel?.listType = .vertical
+        self.listType = .vertical
         self.collectionView.reloadData()
     }
     
     @IBAction func gridList(_ sender: Any) {
-        self.viewModel?.listType = .grid
+        self.listType = .grid
         self.collectionView.reloadData()
     }
 }
 
 extension CharacterListViewController: CharacterListDisplayLogic {
     func displayCharacters(viewModel: CharacterList.FetchCharacters.ViewModel) {
+        footerView.stopAnimating()
         self.viewModel = viewModel
         collectionView.reloadData()
     }
+    
+    func displayError(_ message: String) {
+        footerView.stopAnimating()
+        // TODO error message
+    }
 }
 
-extension CharacterListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension CharacterListViewController: UICollectionViewDelegate,
+                                       UICollectionViewDataSource,
+                                       UICollectionViewDelegateFlowLayout {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
+        
         viewModel?.characters.count ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch self.viewModel?.listType {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        switch self.listType {
         case .vertical:
             let cell = collectionView.dequeueCell(type: VerticalCharacterCell.self, indexPath: indexPath)
             cell.configureCell(with: viewModel?.characters[indexPath.row])
@@ -91,31 +112,28 @@ extension CharacterListViewController: UICollectionViewDelegate, UICollectionVie
             let cell = collectionView.dequeueCell(type: GridCharacterCell.self, indexPath: indexPath)
             cell.configureCell(with: viewModel?.characters[indexPath.row])
             return cell
-        default: return UICollectionViewCell()
         }
     }
     
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAt indexPath: IndexPath
-    ) -> CGSize {
-        switch self.viewModel?.listType {
+        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        switch self.listType {
         case .vertical:
             return CGSize(width: UIScreen.main.bounds.width, height: 140)
         case .grid:
             return CGSize(width: (UIScreen.main.bounds.width - 72) / 2, height: 220)
-        default:
-            return .zero
         }
     }
 
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
-        minimumLineSpacingForSectionAt section: Int
-    ) -> CGFloat {
-        switch self.viewModel?.listType {
+        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        switch self.listType {
         case .grid:
             return 32
         default:
@@ -126,25 +144,50 @@ extension CharacterListViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
-        minimumInteritemSpacingForSectionAt section: Int
-    ) -> CGFloat {
-        24
+        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 24
     }
 
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
-        insetForSectionAt section: Int
-    ) -> UIEdgeInsets {
-        switch self.viewModel?.listType {
+        insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        switch self.listType {
         case .vertical:
             return UIEdgeInsets(top: 24, left: 0, bottom: 24, right: 0)
         case .grid:
             return UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
-        default:
-            return .zero
         }
     }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        willDisplay cell: UICollectionViewCell,
+        forItemAt indexPath: IndexPath) {
+        
+        if indexPath.row == (viewModel?.characters.count ?? 0) - 3 {
+            footerView.startAnimating()
+            interactor?.fetchNewCharacters()
+        }
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        at indexPath: IndexPath) -> UICollectionReusableView {
+        
+            if kind == UICollectionView.elementKindSectionFooter {
+                let footer = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind, withReuseIdentifier: "Footer", for: indexPath
+                )
+                footer.addSubview(footerView)
+                footerView.frame = CGRect(x: 0, y: 0, width: collectionView.bounds.width, height: 50)
+                return footer
+            }
+            return UICollectionReusableView()
+        }
 }
 
 extension CharacterListViewController: UISearchBarDelegate {

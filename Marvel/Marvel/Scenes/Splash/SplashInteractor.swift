@@ -27,7 +27,7 @@ final class SplashInteractor: SplashBusinessLogic, SplashDataStore {
     }
     
     func fetchCharacters() {
-        worker?.getCharacters(request: .init(offset: 0), completion: { [weak self] result in
+        worker?.getCharacters(request: .init(offset: "0"), completion: { [weak self] result in
             switch result {
             case let .success(response):
                 self?.characters = response

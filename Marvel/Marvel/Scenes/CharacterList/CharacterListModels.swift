@@ -10,6 +10,11 @@ import API
 // swiftlint:disable nesting
 enum CharacterList {
     
+    enum ListType {
+        case vertical
+        case grid
+    }
+    
     enum FetchCharacters {
         
         struct Request {
@@ -22,12 +27,6 @@ enum CharacterList {
         
         struct ViewModel {
             let characters: [CharacterCellModel]
-            var listType: ListType = .vertical
-            
-            enum ListType {
-                case vertical
-                case grid
-            }
             
             struct CharacterCellModel {
                 let image: String
