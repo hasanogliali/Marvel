@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BinaryFrameworks",
+        "repositoryURL": "https://github.com/hasanogliali/NetworkManagerXC.git",
+        "state": {
+          "branch": "main",
+          "revision": "07c37c422043d86ef79c23d2a274f716f6611e19",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

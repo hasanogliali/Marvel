@@ -58,6 +58,7 @@ final class CharacterListViewController: UIViewController {
         collectionView.registerNib(VerticalCharacterCell.self, bundle: .main)
         collectionView.registerNib(GridCharacterCell.self, bundle: .main)
         collectionView.addFooter()
+        setNavigationBarImage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +74,21 @@ final class CharacterListViewController: UIViewController {
     @IBAction func gridList(_ sender: Any) {
         self.listType = .grid
         self.collectionView.reloadData()
+    }
+    
+    func setNavigationBarImage() {
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
+        let imageView = UIImageView(
+            frame: CGRect(
+                x: (UIScreen.main.bounds.width - 230)/2,
+                y: (44 - 28)/2,
+                width: 230,
+                height: 28)
+        )
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "marvel")
+        titleView.addSubview(imageView)
+        navigationItem.titleView = titleView
     }
 }
 
@@ -127,7 +143,7 @@ extension CharacterListViewController: UICollectionViewDelegate,
             return CGSize(width: (UIScreen.main.bounds.width - 72) / 2, height: 220)
         }
     }
-
+    
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -140,7 +156,7 @@ extension CharacterListViewController: UICollectionViewDelegate,
             return 0
         }
     }
-
+    
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -148,7 +164,7 @@ extension CharacterListViewController: UICollectionViewDelegate,
         
         return 24
     }
-
+    
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -178,16 +194,20 @@ extension CharacterListViewController: UICollectionViewDelegate,
         viewForSupplementaryElementOfKind kind: String,
         at indexPath: IndexPath) -> UICollectionReusableView {
         
-            if kind == UICollectionView.elementKindSectionFooter {
-                let footer = collectionView.dequeueReusableSupplementaryView(
-                    ofKind: kind, withReuseIdentifier: "Footer", for: indexPath
-                )
-                footer.addSubview(footerView)
-                footerView.frame = CGRect(x: 0, y: 0, width: collectionView.bounds.width, height: 50)
-                return footer
-            }
-            return UICollectionReusableView()
+        if kind == UICollectionView.elementKindSectionFooter {
+            let footer = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind, withReuseIdentifier: "Footer", for: indexPath
+            )
+            footer.addSubview(footerView)
+            footerView.frame = CGRect(x: 0, y: 0, width: collectionView.bounds.width, height: 50)
+            return footer
         }
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        router?.routeToCharacterDetail(index: indexPath.item)
+    }
 }
 
 extension CharacterListViewController: UISearchBarDelegate {

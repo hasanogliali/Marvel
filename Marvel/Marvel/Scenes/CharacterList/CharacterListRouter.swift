@@ -5,10 +5,10 @@
 //  Created by Ali Hasanoğlu on 19.09.2021.
 //
 
-import Foundation
+import UIKit
 
 protocol CharacterListRoutingLogic: AnyObject {
-    
+    func routeToCharacterDetail(index: Int)
 }
 
 protocol CharacterListDataPassing: AnyObject {
@@ -20,4 +20,10 @@ final class CharacterListRouter: CharacterListRoutingLogic, CharacterListDataPas
     weak var viewController: CharacterListViewController?
     var dataStore: CharacterListDataStore?
     
+    func routeToCharacterDetail(index: Int) {
+        let characterDetail = UIStoryboard(name: "CharacterDetail", bundle: .main)
+            .instantiateViewController(withIdentifier: "CharacterDetailViewController") as! CharacterDetailViewController
+        characterDetail.router?.dataStore?.character = dataStore?.characters[index]
+        self.viewController?.navigationController?.pushViewController(characterDetail, animated: true)
+    }
 }
