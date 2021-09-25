@@ -19,10 +19,10 @@ class CharacterInformationCell: UITableViewCell {
     func configureCell(with items: [String], title: String) {
         labelTitle.text = title
         infoStack.removeAllArrangedSubviews()
-        for item in items {
+        for (index, item) in items.enumerated() {
             let label = UILabel()
             label.textColor = UIColor(red: 31/255, green: 31/255, blue: 31/255, alpha: 0.9)
-            label.text = item
+            label.text = "\(index + 1). \(item)"
             label.font = UIFont(name: "Halvetica", size: 14)
             infoStack.addArrangedSubview(label)
         }

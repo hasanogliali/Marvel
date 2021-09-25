@@ -56,6 +56,6 @@ extension SplashViewController: SplashDisplayLogic {
     }
     
     func displayError(_ message: String) {
-        // TODO: error message
+        presentAlert(message)
     }
 }

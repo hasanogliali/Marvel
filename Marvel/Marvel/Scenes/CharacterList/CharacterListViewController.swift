@@ -102,7 +102,7 @@ extension CharacterListViewController: CharacterListDisplayLogic {
     
     func displayError(_ message: String) {
         footerView.stopAnimating()
-        // TODO error message
+        presentAlert(message)
     }
     
     func displayCharacterSelection() {
