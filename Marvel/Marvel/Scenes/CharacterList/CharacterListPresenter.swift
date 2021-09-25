@@ -10,6 +10,7 @@ import Foundation
 protocol CharacterListPresentationLogic: AnyObject {
     func presentCharacters(response: CharacterList.FetchCharacters.Response)
     func presentError(_ message: String)
+    func presentCharacterSelection()
 }
 
 final class CharacterListPresenter: CharacterListPresentationLogic {
@@ -23,7 +24,8 @@ final class CharacterListPresenter: CharacterListPresentationLogic {
                 .init(
                     image: "\($0.thumbnail?.path ?? "").\($0.thumbnail?.thumbnailExtension ?? "")",
                     name: $0.name ?? "",
-                    seriesCount: "Played in \($0.series?.items?.count ?? 0) series"
+                    seriesCount: "Played in \($0.series?.items?.count ?? 0) series",
+                    id: $0.id ?? 0
                 )
             )
         }
@@ -32,5 +34,9 @@ final class CharacterListPresenter: CharacterListPresentationLogic {
     
     func presentError(_ message: String) {
         viewController?.displayError(message)
+    }
+    
+    func presentCharacterSelection() {
+        viewController?.displayCharacterSelection()
     }
 }

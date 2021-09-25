@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CharacterListRoutingLogic: AnyObject {
-    func routeToCharacterDetail(index: Int)
+    func routeToCharacterDetail()
 }
 
 protocol CharacterListDataPassing: AnyObject {
@@ -20,10 +20,12 @@ final class CharacterListRouter: CharacterListRoutingLogic, CharacterListDataPas
     weak var viewController: CharacterListViewController?
     var dataStore: CharacterListDataStore?
     
-    func routeToCharacterDetail(index: Int) {
+    func routeToCharacterDetail() {
         let characterDetail = UIStoryboard(name: "CharacterDetail", bundle: .main)
             .instantiateViewController(withIdentifier: "CharacterDetailViewController") as! CharacterDetailViewController
-        characterDetail.router?.dataStore?.character = dataStore?.characters[index]
+        characterDetail.router?.dataStore?.character = dataStore?.characters[dataStore?.selectedCharacterIndex ?? 0]
+        characterDetail.router?.dataStore?.selectedCharacterIndex = dataStore?.selectedCharacterIndex
+        characterDetail.router?.dataStore?.delegate = viewController
         self.viewController?.navigationController?.pushViewController(characterDetail, animated: true)
     }
 }

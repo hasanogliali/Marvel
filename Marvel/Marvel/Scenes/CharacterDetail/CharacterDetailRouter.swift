@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CharacterDetailRoutingLogic: AnyObject {
-    
+    func popViewController()
 }
 
 protocol CharacterDetailDataPassing: AnyObject {
@@ -20,4 +20,10 @@ final class CharacterDetailRouter: CharacterDetailRoutingLogic, CharacterDetailD
     weak var viewController: CharacterDetailViewController?
     var dataStore: CharacterDetailDataStore?
     
+    func popViewController() {
+        if let index = dataStore?.selectedCharacterIndex {
+            dataStore?.delegate?.checkCharacterFavorite(with: index)
+        }
+        viewController?.navigationController?.popViewController(animated: true)
+    }
 }

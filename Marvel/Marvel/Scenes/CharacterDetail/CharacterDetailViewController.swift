@@ -8,8 +8,13 @@
 import UIKit
 import Extensions
 
+protocol CharacterDetailFavoriteDelegate: AnyObject {
+    func checkCharacterFavorite(with index: Int)
+}
+
 protocol CharacterDetailDisplayLogic: AnyObject {
     func displayCharacterDetail(viewModel: CharacterDetail.FetchDetail.ViewModel)
+    func displayFavorite()
 }
 
 final class CharacterDetailViewController: UIViewController {
@@ -68,7 +73,7 @@ final class CharacterDetailViewController: UIViewController {
     }
     
     @objc func backButtonAction() -> Void {
-        self.navigationController?.popViewController(animated: true)
+        router?.popViewController()
     }
 }
 
@@ -76,6 +81,10 @@ extension CharacterDetailViewController: CharacterDetailDisplayLogic {
     func displayCharacterDetail(viewModel: CharacterDetail.FetchDetail.ViewModel) {
         self.title = viewModel.name
         self.viewModel = viewModel
+        tableView.reloadData()
+    }
+    
+    func displayFavorite() {
         tableView.reloadData()
     }
 }
@@ -98,6 +107,7 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
             return cell
         case .buttons:
             let cell = tableView.dequeueCell(type: ButtonsCell.self, indexPath: indexPath)
+            cell.configureCell(with: viewModel?.id ?? 0)
             cell.delegate = self
             return cell
         case .comics:
@@ -142,6 +152,6 @@ extension CharacterDetailViewController: ButtonsCellDelegate {
     }
     
     func didTappedFavoriteButton() {
-        print("favorite")
+        interactor?.handleFavorite()
     }
 }

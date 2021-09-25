@@ -14,7 +14,13 @@ protocol ButtonsCellDelegate: AnyObject {
 
 class ButtonsCell: UITableViewCell {
 
+    @IBOutlet weak var favoriteImage: UIImageView!
     weak var delegate: ButtonsCellDelegate?
+    
+    func configureCell(with id: Int) {
+        favoriteImage.image = UserDefaultsHelper.Favorites.contains(id) ?
+            UIImage(named: "starFilled"): UIImage(named: "star")
+    }
     
     @IBAction func btnFavorite(_ sender: Any) {
         delegate?.didTappedFavoriteButton()

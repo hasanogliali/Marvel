@@ -30,6 +30,7 @@ enum CharacterDetail {
         }
         
         struct ViewModel {
+            let id: Int
             let name: String
             let image: String
             let comics: [String]

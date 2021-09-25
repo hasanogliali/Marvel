@@ -17,7 +17,6 @@ class VerticalCharacterCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
     func configureCell(with model: CharacterList.FetchCharacters.ViewModel.CharacterCellModel?) {
@@ -25,5 +24,7 @@ class VerticalCharacterCell: UICollectionViewCell {
         labelSeriesCount.text = model?.seriesCount
         ivCharacter.sd_imageIndicator = SDWebImageActivityIndicator.large
         ivCharacter.sd_setImage(with: URL(string: model?.image ?? ""))
+        ivFavorite.image = UserDefaultsHelper.Favorites.contains(model?.id ?? 0) ?
+            UIImage(named: "starFilled"): UIImage(named: "star")
     }
 }

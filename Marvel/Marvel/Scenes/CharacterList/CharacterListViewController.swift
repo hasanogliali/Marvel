@@ -11,6 +11,7 @@ import Extensions
 protocol CharacterListDisplayLogic: AnyObject {
     func displayCharacters(viewModel: CharacterList.FetchCharacters.ViewModel)
     func displayError(_ message: String)
+    func displayCharacterSelection()
 }
 
 final class CharacterListViewController: UIViewController {
@@ -102,6 +103,10 @@ extension CharacterListViewController: CharacterListDisplayLogic {
     func displayError(_ message: String) {
         footerView.stopAnimating()
         // TODO error message
+    }
+    
+    func displayCharacterSelection() {
+        router?.routeToCharacterDetail()
     }
 }
 
@@ -206,12 +211,18 @@ extension CharacterListViewController: UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        router?.routeToCharacterDetail(index: indexPath.item)
+        interactor?.characterSelected(request: .init(index: indexPath.item))
     }
 }
 
 extension CharacterListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         interactor?.fetchSearch(request: .init(searchText: searchText))
+    }
+}
+
+extension CharacterListViewController: CharacterDetailFavoriteDelegate {
+    func checkCharacterFavorite(with index: Int) {
+        self.collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
     }
 }

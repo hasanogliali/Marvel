@@ -32,6 +32,7 @@ enum CharacterList {
                 let image: String
                 let name: String
                 let seriesCount: String
+                let id: Int
             }
         }
         
@@ -40,6 +41,12 @@ enum CharacterList {
     enum FetchSearch {
         struct Request {
             let searchText: String
+        }
+    }
+    
+    enum FetchCharacterSelection {
+        struct Request {
+            let index: Int
         }
     }
 }

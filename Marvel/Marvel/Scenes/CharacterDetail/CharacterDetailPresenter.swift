@@ -9,6 +9,7 @@ import Foundation
 
 protocol CharacterDetailPresentationLogic: AnyObject {
     func presentCharacterDetail(response: CharacterDetail.FetchDetail.Response)
+    func presentFavorite()
 }
 
 final class CharacterDetailPresenter: CharacterDetailPresentationLogic {
@@ -38,6 +39,7 @@ final class CharacterDetailPresenter: CharacterDetailPresentationLogic {
         }
         viewController?.displayCharacterDetail(
             viewModel: .init(
+                id: response.character?.id ?? 0,
                 name: response.character?.name ?? "",
                 image: "\(response.character?.thumbnail?.path ?? "").\(response.character?.thumbnail?.thumbnailExtension ?? "")",
                 comics: comics,
@@ -46,5 +48,9 @@ final class CharacterDetailPresenter: CharacterDetailPresentationLogic {
                 series: series
             )
         )
+    }
+    
+    func presentFavorite() {
+        viewController?.displayFavorite()
     }
 }

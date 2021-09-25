@@ -17,6 +17,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mEe-qn-Y6a">
+                        <rect key="frame" x="264" y="10" width="40" height="30"/>
+                    </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVH-L0-bO3">
                         <rect key="frame" x="212" y="10" width="40" height="30"/>
                         <constraints>
@@ -38,7 +41,7 @@
                         </constraints>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="star" catalog="system" title=" "/>
+                        <buttonConfiguration key="configuration" style="plain" title=" "/>
                         <connections>
                             <action selector="btnFavorite:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eHM-M4-C7Z"/>
                         </connections>
@@ -46,20 +49,26 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="cuE-LP-WYb" secondAttribute="bottom" constant="10" id="1BI-99-Nrc"/>
+                    <constraint firstItem="mEe-qn-Y6a" firstAttribute="trailing" secondItem="cuE-LP-WYb" secondAttribute="trailing" id="4r5-7Z-Mfy"/>
                     <constraint firstItem="cuE-LP-WYb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Dad-kD-JS5"/>
+                    <constraint firstItem="mEe-qn-Y6a" firstAttribute="bottom" secondItem="cuE-LP-WYb" secondAttribute="bottom" id="GxL-vW-yq6"/>
+                    <constraint firstItem="mEe-qn-Y6a" firstAttribute="top" secondItem="cuE-LP-WYb" secondAttribute="top" id="RGa-Bn-6x9"/>
                     <constraint firstAttribute="trailing" secondItem="cuE-LP-WYb" secondAttribute="trailing" constant="16" id="Slb-eV-P0g"/>
                     <constraint firstItem="cVH-L0-bO3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="UlH-VL-da9"/>
                     <constraint firstItem="cuE-LP-WYb" firstAttribute="leading" secondItem="cVH-L0-bO3" secondAttribute="trailing" constant="12" id="l8k-4l-2Fb"/>
                     <constraint firstAttribute="bottom" secondItem="cVH-L0-bO3" secondAttribute="bottom" constant="10" id="rc9-o7-oph"/>
+                    <constraint firstItem="mEe-qn-Y6a" firstAttribute="leading" secondItem="cuE-LP-WYb" secondAttribute="leading" id="sU6-lU-glw"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="favoriteImage" destination="mEe-qn-Y6a" id="7U0-ip-qEd"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="119.86607142857142"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
-        <image name="star" catalog="system" width="128" height="116"/>
     </resources>
 </document>

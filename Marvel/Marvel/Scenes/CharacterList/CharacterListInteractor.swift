@@ -12,11 +12,13 @@ protocol CharacterListBusinessLogic: AnyObject {
     func fetchCharacters()
     func fetchSearch(request: CharacterList.FetchSearch.Request)
     func fetchNewCharacters()
+    func characterSelected(request: CharacterList.FetchCharacterSelection.Request)
 }
 
 protocol CharacterListDataStore: AnyObject {
     var characters: [CharacterItem] { get set }
     var filteredCharacters: [CharacterItem] { get set }
+    var selectedCharacterIndex: Int { get set }
 }
 
 final class CharacterListInteractor: CharacterListBusinessLogic, CharacterListDataStore {
@@ -28,6 +30,7 @@ final class CharacterListInteractor: CharacterListBusinessLogic, CharacterListDa
     var isFetchingMore = false
     var isSearchActive = false
     var nextCharactersStartIndex = 20
+    var selectedCharacterIndex: Int = 0
     
     init(worker: CharacterListWorkingLogic) {
         self.worker = worker
@@ -67,6 +70,11 @@ final class CharacterListInteractor: CharacterListBusinessLogic, CharacterListDa
             filteredCharacters = getFilteredList(filterText: request.searchText) ?? []
             presenter?.presentCharacters(response: .init(characters: filteredCharacters))
         }
+    }
+    
+    func characterSelected(request: CharacterList.FetchCharacterSelection.Request) {
+        self.selectedCharacterIndex = request.index
+        presenter?.presentCharacterSelection()
     }
     
     private func getFilteredList(filterText: String) -> [CharacterItem]? {
