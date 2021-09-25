@@ -10,6 +10,7 @@ import API
 protocol CharacterDetailBusinessLogic: AnyObject {
     func fetchCharacterDetail()
     func handleFavorite()
+    func saveCharacter()
 }
 
 protocol CharacterDetailDataStore: AnyObject {
@@ -38,5 +39,21 @@ final class CharacterDetailInteractor: CharacterDetailBusinessLogic, CharacterDe
     func handleFavorite() {
         UserDefaultsHelper.Favorites.handleFavorite(character?.id ?? 0)
         presenter?.presentFavorite()
+    }
+    
+    func saveCharacter() {
+        if UserDefaultsHelper.Character.isCharacterSaved("\(character?.id ?? 0)") {
+            presenter?.presentSaveCharacter(response: .init(existBefore: true, saved: true))
+        } else {
+            UserDefaultsHelper.Character.save(
+                character, with: "\(character?.id ?? 0)"
+            )
+            presenter?.presentSaveCharacter(
+                response: .init(
+                    existBefore: false,
+                    saved: UserDefaultsHelper.Character.isCharacterSaved("\(character?.id ?? 0)")
+                )
+            )
+        }
     }
 }

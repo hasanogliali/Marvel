@@ -39,5 +39,17 @@ enum CharacterDetail {
             let series: [String]
         }
     }
+    
+    enum FetchCharacterSave {
+        struct Response {
+            let existBefore: Bool
+            let saved: Bool
+        }
+        
+        struct ViewModel {
+            let title: String
+            let message: String
+        }
+    }
 }
 // swiftlint:enable nesting

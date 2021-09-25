@@ -42,4 +42,22 @@ struct UserDefaultsHelper {
             UserDefaults.standard.set(characters, forKey: DefaultsKeys.characterIds.rawValue)
         }
     }
+    
+    struct Character {
+        static func save<T: Codable>(_ object: T, with key: String) {
+            do {
+                let data = try JSONEncoder().encode(object)
+                UserDefaults.standard.set(data, forKey: key)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        
+        static func isCharacterSaved(_ key: String) -> Bool {
+            guard let _ = UserDefaults.standard.data(forKey: key) else {
+                return false
+            }
+            return true
+        }
+    }
 }

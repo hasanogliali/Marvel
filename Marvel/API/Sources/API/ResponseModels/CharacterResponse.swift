@@ -7,7 +7,7 @@
 
 import Foundation
 // MARK: - CharacterResponse
-public struct CharacterResponse: Decodable {
+public struct CharacterResponse: Codable {
     
     public struct Request: Encodable {
         public let offset: String
@@ -24,13 +24,13 @@ public struct CharacterResponse: Decodable {
 }
 
 // MARK: - DataClass
-public struct DataClass: Decodable {
+public struct DataClass: Codable {
     public let offset, limit, total, count: Int?
     public let results: [CharacterItem]?
 }
 
 // MARK: - CharacterItem
-public struct CharacterItem: Decodable {
+public struct CharacterItem: Codable {
     public let id: Int?
     public let name, resultDescription: String?
     public let modified: String?
@@ -49,7 +49,7 @@ public struct CharacterItem: Decodable {
 }
 
 // MARK: - Comics
-public struct Comics: Decodable {
+public struct Comics: Codable {
     public let available: Int?
     public let collectionURI: String?
     public let items: [ComicsItem]?
@@ -64,13 +64,13 @@ public struct Comics: Decodable {
 }
 
 // MARK: - ComicsItem
-public struct ComicsItem: Decodable {
+public struct ComicsItem: Codable {
     public let resourceURI: String?
     public let name: String?
 }
 
 // MARK: - Stories
-public struct Stories: Decodable {
+public struct Stories: Codable {
     public let available: Int?
     public let collectionURI: String?
     public let items: [StoriesItem]?
@@ -78,14 +78,14 @@ public struct Stories: Decodable {
 }
 
 // MARK: - StoriesItem
-public struct StoriesItem: Decodable {
+public struct StoriesItem: Codable {
     public let resourceURI: String?
     public let name: String?
     public let type: String?
 }
 
 // MARK: - Thumbnail
-public struct Thumbnail: Decodable {
+public struct Thumbnail: Codable {
     public let path: String?
     public let thumbnailExtension: String?
 
@@ -96,7 +96,7 @@ public struct Thumbnail: Decodable {
 }
 
 // MARK: - URLElement
-public struct URLElement: Decodable {
+public struct URLElement: Codable {
     public let type: String?
     public let url: String?
 }

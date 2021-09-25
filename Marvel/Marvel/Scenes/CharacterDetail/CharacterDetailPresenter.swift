@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import API
 
 protocol CharacterDetailPresentationLogic: AnyObject {
     func presentCharacterDetail(response: CharacterDetail.FetchDetail.Response)
     func presentFavorite()
+    func presentSaveCharacter(response: CharacterDetail.FetchCharacterSave.Response)
 }
 
 final class CharacterDetailPresenter: CharacterDetailPresentationLogic {
@@ -52,5 +54,14 @@ final class CharacterDetailPresenter: CharacterDetailPresentationLogic {
     
     func presentFavorite() {
         viewController?.displayFavorite()
+    }
+    
+    func presentSaveCharacter(response: CharacterDetail.FetchCharacterSave.Response) {
+        if response.existBefore {
+            viewController?.displaySaveCharacter(viewModel: .init(title: "Warning", message: "Character already saved"))
+        }
+        let message = response.saved ? "Character saved succesfully": "An error occured while saving character"
+        let title = response.saved ? "Success": "Error"
+        viewController?.displaySaveCharacter(viewModel: .init(title: title, message: message))
     }
 }

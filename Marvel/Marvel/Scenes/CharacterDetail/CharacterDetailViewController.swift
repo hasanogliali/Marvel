@@ -15,6 +15,7 @@ protocol CharacterDetailFavoriteDelegate: AnyObject {
 protocol CharacterDetailDisplayLogic: AnyObject {
     func displayCharacterDetail(viewModel: CharacterDetail.FetchDetail.ViewModel)
     func displayFavorite()
+    func displaySaveCharacter(viewModel: CharacterDetail.FetchCharacterSave.ViewModel)
 }
 
 final class CharacterDetailViewController: UIViewController {
@@ -87,6 +88,10 @@ extension CharacterDetailViewController: CharacterDetailDisplayLogic {
     func displayFavorite() {
         tableView.reloadData()
     }
+    
+    func displaySaveCharacter(viewModel: CharacterDetail.FetchCharacterSave.ViewModel) {
+        presentAlert(title: viewModel.title, viewModel.message)
+    }
 }
 
 extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -148,7 +153,7 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
 
 extension CharacterDetailViewController: ButtonsCellDelegate {
     func didTappedSaveButton() {
-        print("save")
+        interactor?.saveCharacter()
     }
     
     func didTappedFavoriteButton() {
