@@ -15,6 +15,12 @@
 		66373FC726FF24E5000095AC /* ButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FC526FF24E5000095AC /* ButtonsCell.swift */; };
 		66373FC826FF24E5000095AC /* ButtonsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66373FC626FF24E5000095AC /* ButtonsCell.xib */; };
 		66373FCA26FF37E8000095AC /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FC926FF37E8000095AC /* UserDefaultsHelper.swift */; };
+		66373FDE26FF765A000095AC /* StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FDD26FF765A000095AC /* StubData.swift */; };
+		66373FE326FF8638000095AC /* SplashViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FE226FF8638000095AC /* SplashViewControllerTests.swift */; };
+		66373FE426FF9318000095AC /* character.json in Resources */ = {isa = PBXBuildFile; fileRef = 66373FE026FF76AE000095AC /* character.json */; };
+		66373FE726FF953A000095AC /* CharacterListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FE626FF953A000095AC /* CharacterListViewControllerTest.swift */; };
+		66373FE926FF955C000095AC /* SplashRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FE826FF955C000095AC /* SplashRouterSpy.swift */; };
+		66373FEB26FF9592000095AC /* SplashWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FEA26FF9592000095AC /* SplashWorkerSpy.swift */; };
 		664E79ED26F7882D00C475D8 /* CharacterList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664E79E626F7882D00C475D8 /* CharacterList.storyboard */; };
 		664E79EE26F7882D00C475D8 /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E79E726F7882D00C475D8 /* CharacterListViewController.swift */; };
 		664E79EF26F7882D00C475D8 /* CharacterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E79E826F7882D00C475D8 /* CharacterListPresenter.swift */; };
@@ -75,6 +81,12 @@
 		66373FC526FF24E5000095AC /* ButtonsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsCell.swift; sourceTree = "<group>"; };
 		66373FC626FF24E5000095AC /* ButtonsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonsCell.xib; sourceTree = "<group>"; };
 		66373FC926FF37E8000095AC /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		66373FDD26FF765A000095AC /* StubData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubData.swift; sourceTree = "<group>"; };
+		66373FE026FF76AE000095AC /* character.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = character.json; sourceTree = "<group>"; };
+		66373FE226FF8638000095AC /* SplashViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerTests.swift; sourceTree = "<group>"; };
+		66373FE626FF953A000095AC /* CharacterListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewControllerTest.swift; sourceTree = "<group>"; };
+		66373FE826FF955C000095AC /* SplashRouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouterSpy.swift; sourceTree = "<group>"; };
+		66373FEA26FF9592000095AC /* SplashWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWorkerSpy.swift; sourceTree = "<group>"; };
 		664E79E426F76EA600C475D8 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		664E79E626F7882D00C475D8 /* CharacterList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterList.storyboard; sourceTree = "<group>"; };
 		664E79E726F7882D00C475D8 /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +168,43 @@
 				66373FC626FF24E5000095AC /* ButtonsCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		66373FCB26FF7220000095AC /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				66373FDD26FF765A000095AC /* StubData.swift */,
+				66373FDF26FF768C000095AC /* resources */,
+				66373FCC26FF722C000095AC /* Splash */,
+				66373FE526FF9516000095AC /* CharcterList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		66373FCC26FF722C000095AC /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				66373FE226FF8638000095AC /* SplashViewControllerTests.swift */,
+				66373FE826FF955C000095AC /* SplashRouterSpy.swift */,
+				66373FEA26FF9592000095AC /* SplashWorkerSpy.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		66373FDF26FF768C000095AC /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				66373FE026FF76AE000095AC /* character.json */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		66373FE526FF9516000095AC /* CharcterList */ = {
+			isa = PBXGroup;
+			children = (
+				66373FE626FF953A000095AC /* CharacterListViewControllerTest.swift */,
+			);
+			path = CharcterList;
 			sourceTree = "<group>";
 		};
 		664E79E326F76E8800C475D8 /* Configurations */ = {
@@ -245,6 +294,7 @@
 		6695E3F926F75B5E004CF51B /* MarvelTests */ = {
 			isa = PBXGroup;
 			children = (
+				66373FCB26FF7220000095AC /* Scenes */,
 				6695E3FA26F75B5E004CF51B /* MarvelTests.swift */,
 				6695E3FC26F75B5E004CF51B /* Info.plist */,
 			);
@@ -416,6 +466,7 @@
 				6698307426FBBD3600227C63 /* CharacterDetail.storyboard in Resources */,
 				66373FC826FF24E5000095AC /* ButtonsCell.xib in Resources */,
 				6695E3ED26F75B5E004CF51B /* Assets.xcassets in Resources */,
+				66373FE426FF9318000095AC /* character.json in Resources */,
 				66373FC026FE6250000095AC /* CharacterPosterCell.xib in Resources */,
 				664E79ED26F7882D00C475D8 /* CharacterList.storyboard in Resources */,
 				66373FC426FE69B7000095AC /* CharacterInformationCell.xib in Resources */,
@@ -480,7 +531,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66373FE926FF955C000095AC /* SplashRouterSpy.swift in Sources */,
+				66373FEB26FF9592000095AC /* SplashWorkerSpy.swift in Sources */,
+				66373FE726FF953A000095AC /* CharacterListViewControllerTest.swift in Sources */,
 				6695E3FB26F75B5E004CF51B /* MarvelTests.swift in Sources */,
+				66373FE326FF8638000095AC /* SplashViewControllerTests.swift in Sources */,
+				66373FDE26FF765A000095AC /* StubData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
