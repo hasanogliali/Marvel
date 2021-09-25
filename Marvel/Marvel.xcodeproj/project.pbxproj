@@ -21,6 +21,10 @@
 		66373FE726FF953A000095AC /* CharacterListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FE626FF953A000095AC /* CharacterListViewControllerTest.swift */; };
 		66373FE926FF955C000095AC /* SplashRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FE826FF955C000095AC /* SplashRouterSpy.swift */; };
 		66373FEB26FF9592000095AC /* SplashWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FEA26FF9592000095AC /* SplashWorkerSpy.swift */; };
+		66373FED26FFB5CE000095AC /* CharacterListWorkingLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FEC26FFB5CE000095AC /* CharacterListWorkingLogicSpy.swift */; };
+		66373FEF26FFB624000095AC /* CharacterListDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FEE26FFB624000095AC /* CharacterListDisplayLogicSpy.swift */; };
+		66373FF126FFB654000095AC /* CharacterListRoutingLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FF026FFB654000095AC /* CharacterListRoutingLogicSpy.swift */; };
+		66373FF426FFB6BF000095AC /* CharacterDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FF326FFB6BF000095AC /* CharacterDetailViewControllerTests.swift */; };
 		664E79ED26F7882D00C475D8 /* CharacterList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664E79E626F7882D00C475D8 /* CharacterList.storyboard */; };
 		664E79EE26F7882D00C475D8 /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E79E726F7882D00C475D8 /* CharacterListViewController.swift */; };
 		664E79EF26F7882D00C475D8 /* CharacterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E79E826F7882D00C475D8 /* CharacterListPresenter.swift */; };
@@ -87,6 +91,10 @@
 		66373FE626FF953A000095AC /* CharacterListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewControllerTest.swift; sourceTree = "<group>"; };
 		66373FE826FF955C000095AC /* SplashRouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouterSpy.swift; sourceTree = "<group>"; };
 		66373FEA26FF9592000095AC /* SplashWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWorkerSpy.swift; sourceTree = "<group>"; };
+		66373FEC26FFB5CE000095AC /* CharacterListWorkingLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListWorkingLogicSpy.swift; sourceTree = "<group>"; };
+		66373FEE26FFB624000095AC /* CharacterListDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListDisplayLogicSpy.swift; sourceTree = "<group>"; };
+		66373FF026FFB654000095AC /* CharacterListRoutingLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListRoutingLogicSpy.swift; sourceTree = "<group>"; };
+		66373FF326FFB6BF000095AC /* CharacterDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		664E79E426F76EA600C475D8 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		664E79E626F7882D00C475D8 /* CharacterList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterList.storyboard; sourceTree = "<group>"; };
 		664E79E726F7882D00C475D8 /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +185,7 @@
 				66373FDF26FF768C000095AC /* resources */,
 				66373FCC26FF722C000095AC /* Splash */,
 				66373FE526FF9516000095AC /* CharcterList */,
+				66373FF226FFB6A0000095AC /* CharacterDetail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -203,8 +212,19 @@
 			isa = PBXGroup;
 			children = (
 				66373FE626FF953A000095AC /* CharacterListViewControllerTest.swift */,
+				66373FEC26FFB5CE000095AC /* CharacterListWorkingLogicSpy.swift */,
+				66373FEE26FFB624000095AC /* CharacterListDisplayLogicSpy.swift */,
+				66373FF026FFB654000095AC /* CharacterListRoutingLogicSpy.swift */,
 			);
 			path = CharcterList;
+			sourceTree = "<group>";
+		};
+		66373FF226FFB6A0000095AC /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				66373FF326FFB6BF000095AC /* CharacterDetailViewControllerTests.swift */,
+			);
+			path = CharacterDetail;
 			sourceTree = "<group>";
 		};
 		664E79E326F76E8800C475D8 /* Configurations */ = {
@@ -531,12 +551,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66373FED26FFB5CE000095AC /* CharacterListWorkingLogicSpy.swift in Sources */,
 				66373FE926FF955C000095AC /* SplashRouterSpy.swift in Sources */,
 				66373FEB26FF9592000095AC /* SplashWorkerSpy.swift in Sources */,
 				66373FE726FF953A000095AC /* CharacterListViewControllerTest.swift in Sources */,
 				6695E3FB26F75B5E004CF51B /* MarvelTests.swift in Sources */,
+				66373FF126FFB654000095AC /* CharacterListRoutingLogicSpy.swift in Sources */,
 				66373FE326FF8638000095AC /* SplashViewControllerTests.swift in Sources */,
+				66373FEF26FFB624000095AC /* CharacterListDisplayLogicSpy.swift in Sources */,
 				66373FDE26FF765A000095AC /* StubData.swift in Sources */,
+				66373FF426FFB6BF000095AC /* CharacterDetailViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
