@@ -23,10 +23,12 @@ enum CharacterList {
         
         struct Response {
             let characters: [CharacterItem]
+            let isSearchActive: Bool
         }
         
         struct ViewModel {
             let characters: [CharacterCellModel]
+            let isSearchActive: Bool
             
             struct CharacterCellModel {
                 let image: String

@@ -188,7 +188,7 @@ extension CharacterListViewController: UICollectionViewDelegate,
         willDisplay cell: UICollectionViewCell,
         forItemAt indexPath: IndexPath) {
         
-        if indexPath.row == (viewModel?.characters.count ?? 0) - 3 {
+            if (indexPath.row == (viewModel?.characters.count ?? 0) - 3), (!(viewModel?.isSearchActive ?? false)) {
             footerView.startAnimating()
             interactor?.fetchNewCharacters()
         }

@@ -29,7 +29,9 @@ final class CharacterListPresenter: CharacterListPresentationLogic {
                 )
             )
         }
-        viewController?.displayCharacters(viewModel: .init(characters: characterList))
+        viewController?.displayCharacters(
+            viewModel: .init(characters: characterList, isSearchActive: response.isSearchActive)
+        )
     }
     
     func presentError(_ message: String) {

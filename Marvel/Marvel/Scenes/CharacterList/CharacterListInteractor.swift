@@ -37,7 +37,7 @@ final class CharacterListInteractor: CharacterListBusinessLogic, CharacterListDa
     }
     
     func fetchCharacters() {
-        self.presenter?.presentCharacters(response: .init(characters: characters))
+        self.presenter?.presentCharacters(response: .init(characters: characters, isSearchActive: false))
     }
     
     func fetchNewCharacters() {
@@ -54,7 +54,9 @@ final class CharacterListInteractor: CharacterListBusinessLogic, CharacterListDa
             case let .success(response):
                 self?.nextCharactersStartIndex += 20
                 self?.characters.append(contentsOf: response.data?.results ?? [])
-                self?.presenter?.presentCharacters(response: .init(characters: self?.characters ?? []))
+                self?.presenter?.presentCharacters(
+                    response: .init(characters: self?.characters ?? [], isSearchActive: false)
+                )
             case let .failure(error):
                 self?.presenter?.presentError(error.localizedDescription)
             }
@@ -64,11 +66,11 @@ final class CharacterListInteractor: CharacterListBusinessLogic, CharacterListDa
     func fetchSearch(request: CharacterList.FetchSearch.Request) {
         if request.searchText == "" {
             isSearchActive = false
-            presenter?.presentCharacters(response: .init(characters: characters))
+            presenter?.presentCharacters(response: .init(characters: characters, isSearchActive: isSearchActive))
         } else {
             isSearchActive = true
             filteredCharacters = getFilteredList(filterText: request.searchText) ?? []
-            presenter?.presentCharacters(response: .init(characters: filteredCharacters))
+            presenter?.presentCharacters(response: .init(characters: filteredCharacters, isSearchActive: isSearchActive))
         }
     }
     
