@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		66373FBB26FE5DF9000095AC /* API in Frameworks */ = {isa = PBXBuildFile; productRef = 66373FBA26FE5DF9000095AC /* API */; };
+		66373FBF26FE6250000095AC /* CharacterPosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FBD26FE6250000095AC /* CharacterPosterCell.swift */; };
+		66373FC026FE6250000095AC /* CharacterPosterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66373FBE26FE6250000095AC /* CharacterPosterCell.xib */; };
+		66373FC326FE69B7000095AC /* CharacterInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FC126FE69B7000095AC /* CharacterInformationCell.swift */; };
+		66373FC426FE69B7000095AC /* CharacterInformationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66373FC226FE69B7000095AC /* CharacterInformationCell.xib */; };
+		66373FC726FF24E5000095AC /* ButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66373FC526FF24E5000095AC /* ButtonsCell.swift */; };
+		66373FC826FF24E5000095AC /* ButtonsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66373FC626FF24E5000095AC /* ButtonsCell.xib */; };
 		664E79ED26F7882D00C475D8 /* CharacterList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664E79E626F7882D00C475D8 /* CharacterList.storyboard */; };
 		664E79EE26F7882D00C475D8 /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E79E726F7882D00C475D8 /* CharacterListViewController.swift */; };
 		664E79EF26F7882D00C475D8 /* CharacterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664E79E826F7882D00C475D8 /* CharacterListPresenter.swift */; };
@@ -61,6 +67,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		66373FBD26FE6250000095AC /* CharacterPosterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPosterCell.swift; sourceTree = "<group>"; };
+		66373FBE26FE6250000095AC /* CharacterPosterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterPosterCell.xib; sourceTree = "<group>"; };
+		66373FC126FE69B7000095AC /* CharacterInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInformationCell.swift; sourceTree = "<group>"; };
+		66373FC226FE69B7000095AC /* CharacterInformationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterInformationCell.xib; sourceTree = "<group>"; };
+		66373FC526FF24E5000095AC /* ButtonsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsCell.swift; sourceTree = "<group>"; };
+		66373FC626FF24E5000095AC /* ButtonsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonsCell.xib; sourceTree = "<group>"; };
 		664E79E426F76EA600C475D8 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		664E79E626F7882D00C475D8 /* CharacterList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterList.storyboard; sourceTree = "<group>"; };
 		664E79E726F7882D00C475D8 /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +146,12 @@
 		66373FBC26FE61C1000095AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				66373FBD26FE6250000095AC /* CharacterPosterCell.swift */,
+				66373FBE26FE6250000095AC /* CharacterPosterCell.xib */,
+				66373FC126FE69B7000095AC /* CharacterInformationCell.swift */,
+				66373FC226FE69B7000095AC /* CharacterInformationCell.xib */,
+				66373FC526FF24E5000095AC /* ButtonsCell.swift */,
+				66373FC626FF24E5000095AC /* ButtonsCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -393,8 +411,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6698307426FBBD3600227C63 /* CharacterDetail.storyboard in Resources */,
+				66373FC826FF24E5000095AC /* ButtonsCell.xib in Resources */,
 				6695E3ED26F75B5E004CF51B /* Assets.xcassets in Resources */,
+				66373FC026FE6250000095AC /* CharacterPosterCell.xib in Resources */,
 				664E79ED26F7882D00C475D8 /* CharacterList.storyboard in Resources */,
+				66373FC426FE69B7000095AC /* CharacterInformationCell.xib in Resources */,
 				664E7A0726F8F38A00C475D8 /* VerticalCharacterCell.xib in Resources */,
 				6695E3EB26F75B5B004CF51B /* Main.storyboard in Resources */,
 				664E79FC26F8E6FA00C475D8 /* Splash.storyboard in Resources */,
@@ -435,16 +456,19 @@
 				664E79FD26F8E6FA00C475D8 /* SplashViewController.swift in Sources */,
 				6698307726FBBD3600227C63 /* CharacterDetailInteractor.swift in Sources */,
 				664E79FF26F8E6FA00C475D8 /* SplashInteractor.swift in Sources */,
+				66373FC326FE69B7000095AC /* CharacterInformationCell.swift in Sources */,
 				6695E3E426F75B5B004CF51B /* AppDelegate.swift in Sources */,
 				664E7A0626F8F38A00C475D8 /* VerticalCharacterCell.swift in Sources */,
 				664E7A0226F8E6FA00C475D8 /* SplashRouter.swift in Sources */,
 				664E79F126F7882D00C475D8 /* CharacterListModels.swift in Sources */,
 				6698307926FBBD3600227C63 /* CharacterDetailWorker.swift in Sources */,
+				66373FC726FF24E5000095AC /* ButtonsCell.swift in Sources */,
 				664E79EE26F7882D00C475D8 /* CharacterListViewController.swift in Sources */,
 				6698307526FBBD3600227C63 /* CharacterDetailViewController.swift in Sources */,
 				664E79F326F7882D00C475D8 /* CharacterListRouter.swift in Sources */,
 				6695E3E626F75B5B004CF51B /* SceneDelegate.swift in Sources */,
 				6698307626FBBD3600227C63 /* CharacterDetailPresenter.swift in Sources */,
+				66373FBF26FE6250000095AC /* CharacterPosterCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

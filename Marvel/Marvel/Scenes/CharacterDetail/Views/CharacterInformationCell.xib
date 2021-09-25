@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="CharacterInformationCell" customModule="Marvel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="val-Uj-2Wf">
+                        <rect key="frame" x="16" y="8" width="288" height="21"/>
+                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                        <color key="textColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Svb-t0-fOn">
+                        <rect key="frame" x="32" y="45" width="272" height="31"/>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="val-Uj-2Wf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="3Tg-xl-Lsc"/>
+                    <constraint firstAttribute="trailing" secondItem="val-Uj-2Wf" secondAttribute="trailing" constant="16" id="Sk4-mc-PWH"/>
+                    <constraint firstAttribute="trailing" secondItem="Svb-t0-fOn" secondAttribute="trailing" constant="16" id="YCq-XT-TUC"/>
+                    <constraint firstItem="Svb-t0-fOn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="jus-Pg-Uqw"/>
+                    <constraint firstAttribute="bottom" secondItem="Svb-t0-fOn" secondAttribute="bottom" constant="8" id="lPT-c7-x8t"/>
+                    <constraint firstItem="val-Uj-2Wf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="vmQ-Qo-jor"/>
+                    <constraint firstItem="Svb-t0-fOn" firstAttribute="top" secondItem="val-Uj-2Wf" secondAttribute="bottom" constant="16" id="xDH-jW-OKu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="infoStack" destination="Svb-t0-fOn" id="Rgc-sU-vdk"/>
+                <outlet property="labelTitle" destination="val-Uj-2Wf" id="GMB-bY-yCK"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="130.58035714285714"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -10,6 +10,15 @@ import API
 // swiftlint:disable nesting
 enum CharacterDetail {
     
+    enum Sections: Int, CaseIterable {
+        case poster
+        case buttons
+        case comics
+        case events
+        case stories
+        case series
+    }
+    
     enum FetchDetail {
         
         struct Request {
@@ -21,7 +30,12 @@ enum CharacterDetail {
         }
         
         struct ViewModel {
-            let character: CharacterItem?
+            let name: String
+            let image: String
+            let comics: [String]
+            let events: [String]
+            let stories: [String]
+            let series: [String]
         }
     }
 }
