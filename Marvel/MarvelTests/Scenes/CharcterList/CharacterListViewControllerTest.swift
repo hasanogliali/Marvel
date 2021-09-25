@@ -38,7 +38,8 @@ class CharacterListViewControllerTest: XCTestCase {
             characters:
                 [
                     .init(image: "", name: "Atom Karınca", seriesCount: "played 3", id: 123)
-                ]
+                ],
+            isSearchActive: false
         )
         
         viewController.router = router
